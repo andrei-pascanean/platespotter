@@ -973,7 +973,7 @@
             countries.forEach(country => {
                 country.addEventListener("touchend", (e) => {
                     if (dragMoved) return;
-                    e.stopPropagation();
+                    isDragging = false;
                     const touch = e.changedTouches[0];
                     if (activeTooltipCountry === country) {
                         tooltip.classList.remove("visible");
