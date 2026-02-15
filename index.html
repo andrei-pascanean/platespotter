@@ -9,6 +9,32 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        /* Accent color schemes */
+        body, body[data-accent="green"] {
+            --accent: #44ff88; --accent-stroke: #33cc66;
+            --accent-light: #22aa55; --accent-light-dark: #1a8844;
+            --land-light: #c8e6c0; --land-light-stroke: #b0d4a8;
+            --land-dark: #0f3028; --land-dark-stroke: #1a5040;
+        }
+        body[data-accent="blue"] {
+            --accent: #44aaff; --accent-stroke: #3388ee;
+            --accent-light: #2288cc; --accent-light-dark: #1a6699;
+            --land-light: #c0d8f0; --land-light-stroke: #a8c4e0;
+            --land-dark: #0f2030; --land-dark-stroke: #1a3050;
+        }
+        body[data-accent="red"] {
+            --accent: #ff5566; --accent-stroke: #cc4455;
+            --accent-light: #cc3344; --accent-light-dark: #aa2233;
+            --land-light: #f0c8cc; --land-light-stroke: #e0b0b4;
+            --land-dark: #300f14; --land-dark-stroke: #501a24;
+        }
+        body[data-accent="orange"] {
+            --accent: #ffaa44; --accent-stroke: #ee8833;
+            --accent-light: #cc7722; --accent-light-dark: #aa5511;
+            --land-light: #f0e0c0; --land-light-stroke: #e0d0a8;
+            --land-dark: #302010; --land-dark-stroke: #50381a;
+        }
+
         * {
             box-sizing: border-box;
         }
@@ -61,7 +87,7 @@
             width: 6px;
             height: 6px;
             border-radius: 50%;
-            background: #44ff88;
+            background: var(--accent);
             animation: pulse-dot 2s ease-in-out infinite;
         }
 
@@ -113,7 +139,7 @@
         }
 
         footer a:hover {
-            color: #44ff88;
+            color: var(--accent);
         }
 
         svg {
@@ -123,16 +149,16 @@
         }
 
         .country {
-            fill: #0f3028;
-            stroke: #1a5040;
+            fill: var(--land-dark);
+            stroke: var(--land-dark-stroke);
             stroke-width: 0.5;
             cursor: pointer;
             transition: fill 0.2s ease, stroke 0.2s ease;
         }
 
         .country:hover {
-            fill: #44ff88;
-            stroke: #33cc66;
+            fill: var(--accent);
+            stroke: var(--accent-stroke);
         }
 
         .tooltip {
@@ -152,10 +178,10 @@
             text-align: center;
             box-shadow: 0 4px 24px rgba(0, 0, 0, 0.6);
             border: 1px solid #2a2a2a;
-            border-top: 2px solid #44ff88;
+            border-top: 2px solid var(--accent);
         }
 
-        .zoom-controls {
+        .map-controls {
             position: absolute;
             bottom: 16px;
             right: 16px;
@@ -165,7 +191,7 @@
             z-index: 5;
         }
 
-        .zoom-controls button {
+        .map-controls button {
             width: 32px;
             height: 32px;
             border: 1px solid #333333;
@@ -183,9 +209,117 @@
             padding: 0;
         }
 
-        .zoom-controls button:hover {
+        .map-controls button:hover {
             background: rgba(40, 40, 40, 0.9);
-            color: #44ff88;
+            color: var(--accent);
+        }
+
+        .map-controls .divider {
+            height: 6px;
+        }
+
+        .accent-wrapper {
+            position: relative;
+        }
+
+        .accent-drawer {
+            position: absolute;
+            right: 100%;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            padding: 0;
+            height: 32px;
+            background: rgba(20, 20, 20, 0.9);
+            border: 1px solid #333333;
+            border-radius: 4px;
+            margin-right: 4px;
+            overflow: hidden;
+            max-width: 0;
+            opacity: 0;
+            transition: max-width 0.25s ease, opacity 0.25s ease, padding 0.25s ease;
+            pointer-events: none;
+        }
+
+        .accent-drawer.open {
+            max-width: 120px;
+            padding: 0 6px;
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .accent-dot {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            border: 2px solid transparent;
+            cursor: pointer;
+            transition: transform 0.15s ease, border-color 0.15s ease;
+            flex-shrink: 0;
+        }
+
+        .accent-dot:hover {
+            transform: scale(1.25);
+        }
+
+        .accent-dot.active {
+            border-color: #ffffff;
+        }
+
+        body.light .accent-drawer {
+            background: rgba(255, 255, 255, 0.9);
+            border-color: #ccc;
+        }
+
+        body.light .accent-dot.active {
+            border-color: #333333;
+        }
+
+        /* --- Light mode --- */
+        body.light {
+            background: #f5f5f5;
+            color: #1a1a1a;
+        }
+        body.light nav {
+            background: #ffffff;
+            border-bottom-color: #ddd;
+        }
+        body.light .nav-logo { color: #1a1a1a; }
+        body.light .nav-status { color: #777; }
+        body.light .status-dot { background: var(--accent-light); }
+        body.light main { background: #ffffff; }
+        body.light .country { fill: var(--land-light); stroke: var(--land-light-stroke); }
+        body.light .country:hover { fill: var(--accent-light); stroke: var(--accent-light-dark); }
+        body.light footer {
+            background: #ffffff;
+            color: #999;
+            border-top-color: #ddd;
+        }
+        body.light footer a { color: #666; }
+        body.light footer a:hover { color: var(--accent-light); }
+        body.light .tooltip {
+            background: rgba(255, 255, 255, 0.95);
+            color: #1a1a1a;
+            border-color: #ccc;
+            border-top-color: var(--accent-light);
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
+        }
+        body.light .tooltip .country-name { color: var(--accent-light-dark); }
+        body.light .tooltip img {
+            background: #f0f0f0;
+            border-color: #ccc;
+        }
+        body.light .tooltip .no-plate { color: #999; }
+        body.light .map-controls button {
+            background: rgba(255, 255, 255, 0.9);
+            border-color: #ccc;
+            color: #666;
+        }
+        body.light .map-controls button:hover {
+            background: rgba(240, 240, 240, 0.9);
+            color: var(--accent-light-dark);
         }
 
         .tooltip.visible {
@@ -196,7 +330,7 @@
             font-weight: 600;
             font-size: 12px;
             margin-bottom: 6px;
-            color: #44ff88;
+            color: var(--accent);
             text-transform: uppercase;
             letter-spacing: 0.05em;
         }
@@ -413,10 +547,21 @@
             </svg>
         </div>
         <div id="tooltip" class="tooltip"></div>
-        <div class="zoom-controls">
+        <div class="map-controls">
             <button id="zoom-in" title="Zoom in">+</button>
             <button id="zoom-out" title="Zoom out">&minus;</button>
             <button id="zoom-reset" title="Reset zoom" style="font-size: 13px;">&#8634;</button>
+            <div class="divider"></div>
+            <button id="theme-toggle" title="Toggle light/dark mode" style="font-size: 15px;">&#9788;</button>
+            <div class="accent-wrapper">
+                <div class="accent-drawer" id="accent-drawer">
+                    <span class="accent-dot" data-accent="green" style="background:#4ac685;"></span>
+                    <span class="accent-dot" data-accent="blue" style="background:#44aaff;"></span>
+                    <span class="accent-dot" data-accent="red" style="background:#ff5566;"></span>
+                    <span class="accent-dot" data-accent="orange" style="background:#ffaa44;"></span>
+                </div>
+                <button id="accent-toggle" title="Change accent color" style="font-size: 18px;">&#9679;</button>
+            </div>
         </div>
 
         <script>
@@ -612,6 +757,48 @@
             document.getElementById("zoom-in").addEventListener("click", () => zoomAtCenter(1.4));
             document.getElementById("zoom-out").addEventListener("click", () => zoomAtCenter(1 / 1.4));
             document.getElementById("zoom-reset").addEventListener("click", resetView);
+
+            // --- Theme Toggle ---
+            const themeBtn = document.getElementById("theme-toggle");
+            function setTheme(light) {
+                document.body.classList.toggle("light", light);
+                themeBtn.innerHTML = light ? "&#9790;" : "&#9788;";
+                themeBtn.title = light ? "Switch to dark mode" : "Switch to light mode";
+                localStorage.setItem("theme", light ? "light" : "dark");
+            }
+            themeBtn.addEventListener("click", () => setTheme(!document.body.classList.contains("light")));
+            setTheme(localStorage.getItem("theme") === "light");
+
+            // --- Accent Color Drawer ---
+            const accentColors = { green: "#4ac685", blue: "#44aaff", red: "#ff5566", orange: "#ffaa44" };
+            const accentBtn = document.getElementById("accent-toggle");
+            const accentDrawer = document.getElementById("accent-drawer");
+            const accentDots = accentDrawer.querySelectorAll(".accent-dot");
+
+            function setAccent(name) {
+                document.body.setAttribute("data-accent", name);
+                accentBtn.style.color = accentColors[name];
+                accentDots.forEach(d => d.classList.toggle("active", d.dataset.accent === name));
+                localStorage.setItem("accent", name);
+            }
+
+            accentBtn.addEventListener("click", (e) => {
+                e.stopPropagation();
+                accentDrawer.classList.toggle("open");
+            });
+
+            accentDots.forEach(dot => {
+                dot.addEventListener("click", (e) => {
+                    e.stopPropagation();
+                    setAccent(dot.dataset.accent);
+                    accentDrawer.classList.remove("open");
+                });
+            });
+
+            // Close drawer when clicking elsewhere
+            document.addEventListener("click", () => accentDrawer.classList.remove("open"));
+
+            setAccent(localStorage.getItem("accent") || "green");
 
             // --- Tooltip ---
             function positionTooltip(e) {
