@@ -1,0 +1,254 @@
+{
+  "run_started": "2026-02-12T21:06:17.472694+00:00",
+  "run_completed": "2026-02-12T21:08:40.277109+00:00",
+  "dry_run": false,
+  "total_entries": 61,
+  "successful": 61,
+  "failed": 0,
+  "results": {
+    "AL": {
+      "status": "success",
+      "image_file": "File:License Plate - Albania - Private Vehicle.png"
+    },
+    "AD": {
+      "status": "success",
+      "image_file": "File:Andorra aktuell 2014.jpg"
+    },
+    "AT": {
+      "status": "success",
+      "image_file": "File:Austrian license plate.svg"
+    },
+    "BY": {
+      "status": "success",
+      "image_file": "File:BY-auto-number-1.png"
+    },
+    "BE": {
+      "status": "success",
+      "image_file": "File:Belgian License plate from 2010-11-16 onwards.JPG"
+    },
+    "BA": {
+      "status": "success",
+      "image_file": "File:Registarske tablice Bosne i Hercegovine.svg"
+    },
+    "BG": {
+      "status": "success",
+      "image_file": "File:Plak shakhsi2-BG.png"
+    },
+    "HR": {
+      "status": "success",
+      "image_file": "File:Registration-plate zagreb.jpg"
+    },
+    "CY": {
+      "status": "success",
+      "image_file": "File:Cyprus license plate 2013 sample.svg"
+    },
+    "CZ": {
+      "status": "success",
+      "image_file": "File:Czech-License-Plate-Vector.svg"
+    },
+    "DK": {
+      "status": "success",
+      "image_file": "File:Denmark DK common license plate 2009.svg"
+    },
+    "EE": {
+      "status": "success",
+      "image_file": "File:Estonian license plate.svg"
+    },
+    "FI": {
+      "status": "success",
+      "image_file": "File:Finnish license plate.svg"
+    },
+    "FR": {
+      "status": "success",
+      "image_file": "File:License plate of France AA-229-DB.png"
+    },
+    "DE": {
+      "status": "success",
+      "image_file": "File:2007 Baden-Württemberg license plate (RAKL8136).png"
+    },
+    "GR": {
+      "status": "success",
+      "image_file": "File:GR-number-plate-2004.svg"
+    },
+    "HU": {
+      "status": "success",
+      "image_file": "File:HU normal AABP022.jpg"
+    },
+    "IS": {
+      "status": "success",
+      "image_file": "File:Iceland car plate.jpg"
+    },
+    "IE": {
+      "status": "success",
+      "image_file": "File:Revised format Republic of Ireland numberplate (2013-).svg"
+    },
+    "IT": {
+      "status": "success",
+      "image_file": "File:Targa automobilistica Italia 1999 CZ•889 KF Bolzano-Alto Adige posteriore.svg"
+    },
+    "LV": {
+      "status": "success",
+      "image_file": "File:Latvian license plate.svg"
+    },
+    "LI": {
+      "status": "success",
+      "image_file": "File:Recently issued license plate from Liechtenstein.jpg"
+    },
+    "LT": {
+      "status": "success",
+      "image_file": "File:License plate of Lithuania XXX 000 (2023).png"
+    },
+    "LU": {
+      "status": "success",
+      "image_file": "File:Luxembourg licenseplate EU.JPG"
+    },
+    "MT": {
+      "status": "success",
+      "image_file": "File:Maltese license plate.svg"
+    },
+    "MD": {
+      "status": "success",
+      "image_file": "File:Moldova MD license plate ABC012 2015.svg"
+    },
+    "MC": {
+      "status": "success",
+      "image_file": "File:License plate Monaco 2014.jpg"
+    },
+    "ME": {
+      "status": "success",
+      "image_file": "File:Car-plate plevlja.jpg"
+    },
+    "NL": {
+      "status": "success",
+      "image_file": "File:Dutch plate yellow NL code 10.png"
+    },
+    "MK": {
+      "status": "success",
+      "image_file": "File:North_Macedonia_plate_2019.jpg"
+    },
+    "NO": {
+      "status": "success",
+      "image_file": "File:Hvitt, standard skilt.jpg"
+    },
+    "PL": {
+      "status": "success",
+      "image_file": "File:PolishLicensePlates2019.svg"
+    },
+    "PT": {
+      "status": "success",
+      "image_file": "File:Portuguese licence plate AA16AA.jpg"
+    },
+    "RO": {
+      "status": "success",
+      "image_file": "File:Romanian license plate.svg"
+    },
+    "SM": {
+      "status": "success",
+      "image_file": "File:Targa automobilistica San Marino 1993 L0198.jpg"
+    },
+    "RS": {
+      "status": "success",
+      "image_file": "File:Serbian licence plate.svg"
+    },
+    "SK": {
+      "status": "success",
+      "image_file": "File:Slovak car registration plate 2023.jpg"
+    },
+    "SI": {
+      "status": "success",
+      "image_file": "File:Registrska tablica.jpg"
+    },
+    "ES": {
+      "status": "success",
+      "image_file": "File:Spanish license plate.svg"
+    },
+    "SE": {
+      "status": "success",
+      "image_file": "File:Sweden licenseplate EU.JPG"
+    },
+    "CH": {
+      "status": "success",
+      "image_file": "File:Switzerland licence plate 2007 from Sankt Gallen canton.jpg"
+    },
+    "UA": {
+      "status": "success",
+      "image_file": "File:License plate of Ukraine 2015.png"
+    },
+    "GB": {
+      "status": "success",
+      "image_file": "File:UK Front Registration Plate.png"
+    },
+    "VA": {
+      "status": "success",
+      "image_file": "File:CV-Vatican-plate.jpg"
+    },
+    "AM": {
+      "status": "success",
+      "image_file": "File:Plak-Shakhsi-AM.png"
+    },
+    "AZ": {
+      "status": "success",
+      "image_file": "File:Pelak shakhsi-AZ.svg"
+    },
+    "GE": {
+      "status": "success",
+      "image_file": "File:New EU style vehicle registration plates of Georgia (3).jpg"
+    },
+    "RU": {
+      "status": "success",
+      "image_file": "File:License plate in Russia.svg"
+    },
+    "TR": {
+      "status": "success",
+      "image_file": "File:Private vehicle license plate of Turkey.svg"
+    },
+    "AX": {
+      "status": "success",
+      "image_file": "File:Kfz-Kennzeichen Aland2.jpg"
+    },
+    "GBA": {
+      "status": "success",
+      "image_file": "File:License plate Alderney.jpg"
+    },
+    "FO": {
+      "status": "success",
+      "image_file": "File:Licenseplate of Faroe Islands.JPG"
+    },
+    "GBZ": {
+      "status": "success",
+      "image_file": "File:Current Post-Brexit Gibraltar vehicle license plate.jpg"
+    },
+    "GBG": {
+      "status": "success",
+      "image_file": "File:Guernseylicense plate GBG.jpg"
+    },
+    "GBM": {
+      "status": "success",
+      "image_file": "File:Licenceplate of Isle of Man 2.jpg"
+    },
+    "GBJ": {
+      "status": "success",
+      "image_file": "File:Jersey United Kingdom number plate GBJ.jpg"
+    },
+    "ABH": {
+      "status": "success",
+      "image_file": "File:Abkhazia License Plate Design.png"
+    },
+    "XK": {
+      "status": "success",
+      "image_file": "File:License plate Kosovo.JPG"
+    },
+    "TRNC": {
+      "status": "success",
+      "image_file": "File:Turkish Republic of Northern Cyprus 2018 blue stripe.jpg"
+    },
+    "RSO": {
+      "status": "success",
+      "image_file": "File:South Ossetia License Plate Design.png"
+    },
+    "PMR": {
+      "status": "success",
+      "image_file": "File:Transnistria license plate T001AA.svg"
+    }
+  }
+}
