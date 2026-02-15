@@ -691,17 +691,16 @@
                 vbH = Math.min(vbH, SVG_H);
                 // Allow panning past edges by a portion of the current view
                 // so edge countries can be centered on screen
-                const pad = vbW < SVG_W ? vbW * 0.4 : 0;
-                const padY = vbH < SVG_H ? vbH * 0.4 : 0;
+                const padRight = vbW < SVG_W ? vbW * 0.4 : 0;
                 if (vbW >= SVG_W) {
                     vbX = 0;
                 } else {
-                    vbX = Math.max(-pad, Math.min(vbX, SVG_W - vbW + pad));
+                    vbX = Math.max(0, Math.min(vbX, SVG_W - vbW + padRight));
                 }
                 if (vbH >= SVG_H) {
                     vbY = 0;
                 } else {
-                    vbY = Math.max(-padY, Math.min(vbY, SVG_H - vbH + padY));
+                    vbY = Math.max(0, Math.min(vbY, SVG_H - vbH));
                 }
             }
 
