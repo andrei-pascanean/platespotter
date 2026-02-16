@@ -455,6 +455,113 @@
         }
         body.light .panel-no-plate { color: #999; }
 
+        /* --- Panel Sections --- */
+        .panel-section {
+            margin-top: 20px;
+            padding-top: 16px;
+            border-top: 1px solid #2a2a2a;
+        }
+        .panel-section:first-of-type {
+            margin-top: 16px;
+        }
+        .panel-section-title {
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--accent);
+            margin-bottom: 10px;
+        }
+        .panel-field {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 10px;
+        }
+        .panel-field:last-child {
+            margin-bottom: 0;
+        }
+        .panel-field-label {
+            font-size: 9px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #777;
+            margin-bottom: 3px;
+        }
+        .panel-field-value {
+            font-size: 12px;
+            color: #ccc;
+            line-height: 1.45;
+        }
+        .panel-format-pattern {
+            font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+            font-size: 18px;
+            font-weight: 700;
+            color: #fff;
+            background: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 4px;
+            padding: 10px 14px;
+            text-align: center;
+            letter-spacing: 0.15em;
+            margin-bottom: 8px;
+        }
+        .panel-forbidden-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+        }
+        .panel-forbidden-list li {
+            font-size: 10px;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid #333;
+            border-radius: 3px;
+            padding: 2px 6px;
+            color: #ccc;
+            font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+        }
+
+        .panel-forbidden-text {
+            font-size: 12px;
+            color: #ccc;
+            line-height: 1.5;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid #2a2a2a;
+            border-radius: 4px;
+            padding: 8px 10px;
+        }
+
+        body.light .panel-section {
+            border-top-color: #ddd;
+        }
+        body.light .panel-section-title {
+            color: var(--accent-light-dark);
+        }
+        body.light .panel-field-label {
+            color: #888;
+        }
+        body.light .panel-field-value {
+            color: #333;
+        }
+        body.light .panel-format-pattern {
+            color: #111;
+            background: #f0f0f0;
+            border-color: #ccc;
+        }
+        body.light .panel-forbidden-list li {
+            background: rgba(0,0,0,0.04);
+            border-color: #ccc;
+            color: #333;
+        }
+        body.light .panel-forbidden-text {
+            color: #333;
+            background: rgba(0,0,0,0.02);
+            border-color: #ddd;
+        }
+
         /* --- Mobile --- */
         @media (max-width: 768px) {
             .nav-logo { font-size: 1em; }
@@ -768,6 +875,14 @@
                 SI: "dataset/plates/europe/SI_wiki.jpg"
             };
 
+            let plateFormats = null;
+            fetch('dataset/metadata/plate_formats.json')
+                .then(r => r.json())
+                .then(data => { plateFormats = data.entries; })
+                .catch(() => {});
+
+            // plateFormats data loaded from plate_formats.json above
+
             const tooltip = document.getElementById("tooltip");
             const countries = document.querySelectorAll(".country");
             const navBar = document.querySelector("nav");
@@ -1030,14 +1145,69 @@
             const panelContent = document.getElementById("panel-content");
             let panelCountryCode = null;
 
+            function isVal(v) {
+                return v !== null && v !== undefined && v !== "null" && v !== "";
+            }
+
             function buildPanelHTML(code, name) {
                 const plateSrc = plateMap[code];
+                const pf = plateFormats ? plateFormats[code] : null;
                 let html = `<div class="panel-country-name">${name}</div>`;
                 if (plateSrc) {
                     html += `<img class="panel-plate-img" src="${plateSrc}" alt="${name} license plate">`;
                 } else {
                     html += `<div class="panel-no-plate">No plate image available</div>`;
                 }
+                if (!pf) return html;
+
+                // --- Format ---
+                html += `<div class="panel-section"><div class="panel-section-title">Format</div>`;
+                html += `<div class="panel-format-pattern">${pf.format_pattern}</div>`;
+                html += `<div class="panel-field"><div class="panel-field-value">${pf.format_explanation}</div></div>`;
+                if (isVal(pf.alphabet)) {
+                    html += `<div class="panel-field"><div class="panel-field-label">Alphabet</div><div class="panel-field-value">${pf.alphabet}</div></div>`;
+                }
+                html += `</div>`;
+
+                // --- Design ---
+                html += `<div class="panel-section"><div class="panel-section-title">Design</div>`;
+                html += `<div class="panel-field"><div class="panel-field-label">Dimensions</div><div class="panel-field-value">${pf.dimensions}</div></div>`;
+                html += `<div class="panel-field"><div class="panel-field-label">Background</div><div class="panel-field-value">${pf.colors_background}</div></div>`;
+                html += `<div class="panel-field"><div class="panel-field-label">Lettering</div><div class="panel-field-value">${pf.colors_lettering}</div></div>`;
+                if (isVal(pf.colors_strip)) {
+                    html += `<div class="panel-field"><div class="panel-field-label">Side strip</div><div class="panel-field-value">${pf.colors_strip}</div></div>`;
+                }
+                if (isVal(pf.strip_contents)) {
+                    html += `<div class="panel-field"><div class="panel-field-label">Strip contents</div><div class="panel-field-value">${pf.strip_contents}</div></div>`;
+                }
+                if (isVal(pf.typeface)) {
+                    html += `<div class="panel-field"><div class="panel-field-label">Typeface</div><div class="panel-field-value">${pf.typeface}</div></div>`;
+                }
+                html += `</div>`;
+
+                // --- Forbidden Combinations ---
+                if (isVal(pf.forbidden_combinations)) {
+                    html += `<div class="panel-section"><div class="panel-section-title">Forbidden Combinations</div>`;
+                    if (Array.isArray(pf.forbidden_combinations)) {
+                        html += `<ul class="panel-forbidden-list">` + pf.forbidden_combinations.map(c => `<li>${c}</li>`).join("") + `</ul>`;
+                    } else {
+                        html += `<div class="panel-forbidden-text">${pf.forbidden_combinations}</div>`;
+                    }
+                    html += `</div>`;
+                }
+
+                // --- Vanity Plates ---
+                if (isVal(pf.vanity_plates)) {
+                    html += `<div class="panel-section"><div class="panel-section-title">Vanity Plates</div>`;
+                    html += `<div class="panel-field"><div class="panel-field-value">${pf.vanity_plates}</div></div>`;
+                    html += `</div>`;
+                }
+
+                // --- History ---
+                html += `<div class="panel-section"><div class="panel-section-title">History</div>`;
+                html += `<div class="panel-field"><div class="panel-field-label">Current format introduced</div><div class="panel-field-value">${pf.year_introduced}</div></div>`;
+                html += `</div>`;
+
                 return html;
             }
 

@@ -1,4 +1,5 @@
 ## Bugs
+- [ ] Montenegro format display with MNE at the start
 
 ## Features
 - [x] Add colorpicker for the highlight color
@@ -20,3 +21,4 @@
         - typeface
         - strip contents
     - button to learn more that links to wiki page
+- [ ] create your own license plate

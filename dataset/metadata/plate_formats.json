@@ -4,17 +4,17 @@
   "extraction_model": "gpt-4o-mini",
   "entries": {
     "AL": {
-      "format_pattern": "AB 123 CD",
+      "format_pattern": "AA 000 AA",
       "format_explanation": "The first part 'AB' represents two serial letters, followed by three digits '123', and the last part 'CD' represents two additional serial letters.",
       "alphabet": "Latin; letters O, Q, V, X, Y are not used, Z is reserved for government vehicles, and W is not used in Albanian language.",
-      "forbidden_combinations": "null",
-      "vanity_plates": "null",
+      "forbidden_combinations": null,
+      "vanity_plates": null,
       "year_introduced": "2011",
       "dimensions": "520 x 110 mm",
       "colors_background": "White",
       "colors_lettering": "Black",
       "colors_strip": "Blue strip with 'AL' and a white double-headed eagle.",
-      "typeface": "null",
+      "typeface": null,
       "strip_contents": "Year of registration and regional code in white.",
       "country_name": "Albania",
       "iso": "AL",
@@ -22,7 +22,7 @@
       "extracted_at": "2026-02-15T21:57:24.694661+00:00"
     },
     "AD": {
-      "format_pattern": "A 1234",
+      "format_pattern": "A 0000",
       "format_explanation": "The plate consists of one letter followed by four digits.",
       "alphabet": "Latin (notable restrictions include that the letter 'O' is not used to avoid confusion with the number '0').",
       "forbidden_combinations": null,
@@ -40,7 +40,7 @@
       "extracted_at": "2026-02-15T21:57:29.771895+00:00"
     },
     "AM": {
-      "format_pattern": "NN LL NNN, NNN LL NN",
+      "format_pattern": "00 AA 000, 000 AA 00",
       "format_explanation": "The first part (NN) represents numbers potentially indicating a regional code, followed by two letters (LL) that are smaller in size. The final part consists of another set of numbers (NNN). The reverse format (NNN LL NN) is used for government vehicles.",
       "alphabet": "Latin (A-Z), with specific letters gradually introduced over time. Initially, a few Armenian letters were also used.",
       "forbidden_combinations": null,
@@ -58,7 +58,7 @@
       "extracted_at": "2026-02-15T21:57:36.905343+00:00"
     },
     "AT": {
-      "format_pattern": "LL ∇ NNN LL",
+      "format_pattern": "AA ∇ 000 AA",
       "format_explanation": "LL indicates the provincial code, ∇ represents the provincial emblem, NNN is a three-digit sequence, and LL are letters distinguishing the vehicle.",
       "alphabet": "Latin; the letter Q is excluded from all sequences.",
       "forbidden_combinations": "The letter Q is excluded from all sequences.",
@@ -76,7 +76,7 @@
       "extracted_at": "2026-02-15T21:57:49.602882+00:00"
     },
     "BY": {
-      "format_pattern": "1234 AB-5",
+      "format_pattern": "0000 AA-0",
       "format_explanation": "Four digits representing the vehicle identifier, followed by two letters for the plate series and a final digit indicating the registration region.",
       "alphabet": "Cyrillic and Latin alphabets; restricted to the letters A, E, I, O, B, C, H, K, P, T, X.",
       "forbidden_combinations": null,
@@ -94,7 +94,7 @@
       "extracted_at": "2026-02-15T21:57:54.976826+00:00"
     },
     "BE": {
-      "format_pattern": "1-ABC-123",
+      "format_pattern": "0-AAA-000",
       "format_explanation": "1 digit followed by 3 letters and 3 digits. The digit does not provide geographical information.",
       "alphabet": "Latin alphabet with the use of characters except M, O, Q, and W in certain positions originally, but these restrictions were lifted. Acronyms of political parties are not permitted.",
       "forbidden_combinations": "Combinations starting with M, O, Q, U, W, Z are restricted due to standard regulations. Additionally, combinations imitating special uses (e.g., CD-1234, A-0 to A-99999) are not allowed.",
@@ -112,7 +112,7 @@
       "extracted_at": "2026-02-15T21:58:01.480013+00:00"
     },
     "BA": {
-      "format_pattern": "X00-X-000",
+      "format_pattern": "A00-A-000",
       "format_explanation": "X represents a letter, 00 represents two numbers, and 000 represents three numbers.",
       "alphabet": "Latin and Cyrillic script letters: A, E, O, J, K, M, T.",
       "forbidden_combinations": null,
@@ -130,10 +130,10 @@
       "extracted_at": "2026-02-15T21:58:07.873992+00:00"
     },
     "BG": {
-      "format_pattern": "XX NNNN YY",
+      "format_pattern": "AA 0000 AA",
       "format_explanation": "XX is the province code (1 or 2 letters), NNNN is a four-digit serial number, and YY is a two-letter series code.",
       "alphabet": "Cyrillic and Latin alphabets; only letters common to both are used.",
-      "forbidden_combinations": "The letters Е, О, and У are not used in the series; E is reserved for trailers, and U and O are not used as they are vowels. null",
+      "forbidden_combinations": "The letters Е, О, and У are not used in the series; E is reserved for trailers, and U and O are not used as they are vowels.",
       "vanity_plates": "Personalized plates are available but cost BGN 7,000 (approx. €3,500).",
       "year_introduced": "1992",
       "dimensions": "520 × 110 mm",
@@ -148,7 +148,7 @@
       "extracted_at": "2026-02-15T21:58:16.229950+00:00"
     },
     "CH": {
-      "format_pattern": "LL·NNNNNN",
+      "format_pattern": "AA·000000",
       "format_explanation": "LL represents a two-letter code for the canton, followed by NNNNNN, which represents a serial number with up to 6 digits.",
       "alphabet": "Latin alphabet; letters I, O, Q, and certain combinations that can cause offense or are deemed inappropriate are not used.",
       "forbidden_combinations": null,
@@ -166,7 +166,7 @@
       "extracted_at": "2026-02-15T21:58:23.702371+00:00"
     },
     "CY": {
-      "format_pattern": "LLL NNN",
+      "format_pattern": "AAA 000",
       "format_explanation": "The first part consists of three letters which may represent a specific area, and the second part consists of three digits that run incrementally from 001 to 999.",
       "alphabet": "Latin alphabet, with the letters ABEHKMNPTXYZ used.",
       "forbidden_combinations": null,
@@ -184,7 +184,7 @@
       "extracted_at": "2026-02-15T21:58:28.719808+00:00"
     },
     "CZ": {
-      "format_pattern": "1A2 3456",
+      "format_pattern": "0A0 0000",
       "format_explanation": "The first letter indicates the region code, followed by a number series.",
       "alphabet": "Latin; the letters G, CH, O, Q, and W may not be used",
       "forbidden_combinations": "The letters G, CH, O, Q, and W may not be used to avoid confusion, and the license plate cannot contain any abusive or offensive words.",
@@ -202,7 +202,7 @@
       "extracted_at": "2026-02-15T21:58:34.037809+00:00"
     },
     "DE": {
-      "format_pattern": "LL-NN-NNNN",
+      "format_pattern": "AA-AA-0000",
       "format_explanation": "An area code of one to three letters followed by an identifier sequence consisting of one or two letters and one to four digits.",
       "alphabet": "Latin; certain diacritical marks (Ä, Ö, Ü) are included, but the letter ß is not allowed.",
       "forbidden_combinations": null,
@@ -220,7 +220,7 @@
       "extracted_at": "2026-02-15T21:58:46.230311+00:00"
     },
     "DK": {
-      "format_pattern": "LL NNN 345",
+      "format_pattern": "AA 00 000",
       "format_explanation": "Two letters followed by a space, and then five digits.",
       "alphabet": "Latin alphabet; Danish letters Æ, Ø, and Å are used in vanity plates.",
       "forbidden_combinations": null,
@@ -238,7 +238,7 @@
       "extracted_at": "2026-02-15T21:58:52.270945+00:00"
     },
     "EE": {
-      "format_pattern": "NNN NNN",
+      "format_pattern": "000 AAA",
       "format_explanation": "Three numbers followed by three letters; the numbers denote the vehicle's registration number, while the letters are a part of the serial identification.",
       "alphabet": "Latin; no specific restrictions mentioned.",
       "forbidden_combinations": null,
@@ -256,7 +256,7 @@
       "extracted_at": "2026-02-15T21:58:58.111436+00:00"
     },
     "ES": {
-      "format_pattern": "1234 ABC",
+      "format_pattern": "0000 AAA",
       "format_explanation": "1234 represents the numeric sequence from 0000 to 9999, and ABC is a three-letter series that increments after the numeric sequence reaches 9999.",
       "alphabet": "Latin; certain consonants like B, C, D, F, G, H, J, K, L, M, N, P, R, S, T, V, W, X, Y, and Z are used for the letters.",
       "forbidden_combinations": null,
@@ -274,7 +274,7 @@
       "extracted_at": "2026-02-15T21:59:04.881799+00:00"
     },
     "FI": {
-      "format_pattern": "LLL-NNN",
+      "format_pattern": "AAA-000",
       "format_explanation": "Three letters followed by a dash and three numbers.",
       "alphabet": "Latin, with the letters A-Z used. No special restrictions mentioned.",
       "forbidden_combinations": null,
@@ -292,10 +292,10 @@
       "extracted_at": "2026-02-15T21:59:11.110011+00:00"
     },
     "FR": {
-      "format_pattern": "AA-NNN-AA",
+      "format_pattern": "AA-000-AA",
       "format_explanation": "The registration plate consists of two letters, followed by three numbers, and ending with two letters. The first two letters are random, the numbers are sequential, and the last two letters are also random.",
       "alphabet": "Latin, with the letters I, O, U being excluded to avoid confusion with numbers (1 and 0) and the letter V respectively.",
-      "forbidden_combinations": "I, O, and U are not used; SS is forbidden due to associations with the Nazi organization; and WW is used to indicate temporary plates. Other combinations like KK, PD, PQ, QQ, and WC may have been avoided in previous systems but are included now.",
+      "forbidden_combinations": "I, O, and U are not used; SS is forbidden due to associations with the Nazi organization. Other combinations like KK, PD, PQ, QQ, and WC may have been avoided in previous systems but are included now. WW is reserved for temporary registration plates.",
       "vanity_plates": null,
       "year_introduced": "2009",
       "dimensions": "520 × 110 mm",
@@ -310,7 +310,7 @@
       "extracted_at": "2026-02-15T21:59:27.810474+00:00"
     },
     "GB": {
-      "format_pattern": "LL11 LLL",
+      "format_pattern": "AA00 AAA",
       "format_explanation": "The first two letters indicate the area code where the vehicle was registered, followed by a two-digit age identifier and a three-letter sequence that uniquely distinguishes the vehicle.",
       "alphabet": "Latin; letters I, Q, and Z are not used as area codes, and I is also excluded from the three-letter sequence due to similarities with numbers.",
       "forbidden_combinations": "I, Q, Z; combinations that may appear offensive are restricted, including in foreign languages.",
@@ -319,16 +319,16 @@
       "dimensions": "520 × 111 mm",
       "colors_background": "White at the front, yellow at the rear",
       "colors_lettering": "Black",
-      "colors_strip": "null",
+      "colors_strip": null,
       "typeface": "Mandatory (typeface), a variation of Charles Wright",
-      "strip_contents": "null",
+      "strip_contents": null,
       "country_name": "United Kingdom",
       "iso": "GB",
       "wikipedia_article": "Vehicle_registration_plates_of_the_United_Kingdom",
       "extracted_at": "2026-02-15T21:59:36.602063+00:00"
     },
     "GE": {
-      "format_pattern": "LL-NNN-LL",
+      "format_pattern": "AA-000-AA",
       "format_explanation": "The first two letters represent the region or type of vehicle, the three numbers are the serial number, and the last two letters often indicate the type of vehicle or provide further identification.",
       "alphabet": "Latin alphabet",
       "forbidden_combinations": null,
@@ -346,7 +346,7 @@
       "extracted_at": "2026-02-15T21:59:41.047069+00:00"
     },
     "GR": {
-      "format_pattern": "LLL-NNNN",
+      "format_pattern": "AAA-0000",
       "format_explanation": "The first three letters represent the prefecture code where the car was registered, and the four numbers are a serial number ranging from 1000 to 9999.",
       "alphabet": "Latin alphabet, with only those letters whose capital letter matches a letter from the Greek alphabet.",
       "forbidden_combinations": null,
@@ -364,7 +364,7 @@
       "extracted_at": "2026-02-15T21:59:46.247964+00:00"
     },
     "HR": {
-      "format_pattern": "LL NNN-NN",
+      "format_pattern": "AA 000-AA",
       "format_explanation": "The first two letters represent the city code, followed by three or four numbers and one or two letters (e.g. ZG 000-A, ZG 000-AA).",
       "alphabet": "Latin; letters Q, W, X, and Y are not used as they are not part of the Croatian alphabet.",
       "forbidden_combinations": null,
@@ -382,7 +382,7 @@
       "extracted_at": "2026-02-15T22:00:04.263535+00:00"
     },
     "HU": {
-      "format_pattern": "LLL LLL NNN",
+      "format_pattern": "AAAA 000",
       "format_explanation": "The first four characters are letters, where the first two must be either both vowels or both consonants, followed by a Hungarian coat of arms, and followed by three numbers.",
       "alphabet": "Latin; the letters I, O, and Q are restricted in certain positions.",
       "forbidden_combinations": "I and O cannot be the last letter; Q cannot be used at all; these restrictions prevent confusion with numbers.",
@@ -400,7 +400,7 @@
       "extracted_at": "2026-02-15T22:00:10.818644+00:00"
     },
     "IE": {
-      "format_pattern": "YYH-CC-SSSSSS",
+      "format_pattern": "000-AA-000000",
       "format_explanation": "YYH represents the year or half-year of registration (YY with an additional digit indicating half of the year), CC is the area code, and SSSSSS is a sequence number for the vehicle.",
       "alphabet": "Latin, with letters A to Z used, excluding O, I, and Q to avoid confusion with numbers 0 and 1.",
       "forbidden_combinations": null,
@@ -418,7 +418,7 @@
       "extracted_at": "2026-02-15T22:00:27.610937+00:00"
     },
     "IS": {
-      "format_pattern": "LLL NN",
+      "format_pattern": "AAA 00",
       "format_explanation": "Three letters followed by two digits, with letters representing a random combination and digits a numeric sequence.",
       "alphabet": "Latin; the letters 'Q', 'W', and 'Z' are not used.",
       "forbidden_combinations": null,
@@ -436,7 +436,7 @@
       "extracted_at": "2026-02-15T22:00:33.140324+00:00"
     },
     "IT": {
-      "format_pattern": "AA 999 AA",
+      "format_pattern": "AA 000 AA",
       "format_explanation": "The plate consists of two letters, followed by three numbers, followed by two letters.",
       "alphabet": "Latin alphabet, excluding the letters I, O, Q, and U.",
       "forbidden_combinations": null,
@@ -454,7 +454,7 @@
       "extracted_at": "2026-02-15T22:00:47.887488+00:00"
     },
     "LI": {
-      "format_pattern": "FL NNNNN",
+      "format_pattern": "FL 00000",
       "format_explanation": "FL represents the country code for Liechtenstein, followed by up to five digits as the registration number.",
       "alphabet": "Latin, no notable restrictions on which letters are used.",
       "forbidden_combinations": null,
@@ -472,7 +472,7 @@
       "extracted_at": "2026-02-15T22:00:56.538153+00:00"
     },
     "LT": {
-      "format_pattern": "LLL NNN",
+      "format_pattern": "AAA 000",
       "format_explanation": "Three letters followed by three numbers, with no space between them.",
       "alphabet": "Latin; letters Q, W, and X are not used.",
       "forbidden_combinations": null,
@@ -490,7 +490,7 @@
       "extracted_at": "2026-02-15T22:01:04.887288+00:00"
     },
     "LU": {
-      "format_pattern": "LL NNNN",
+      "format_pattern": "AA 0000",
       "format_explanation": "Two letters followed by four digits.",
       "alphabet": "Latin; Letters I and O are excluded.",
       "forbidden_combinations": "AA, CD, HJ, KK, KZ, PD, SA, SS, WC, ZZ",
@@ -508,7 +508,7 @@
       "extracted_at": "2026-02-15T22:01:11.438880+00:00"
     },
     "LV": {
-      "format_pattern": "LL-NNNN",
+      "format_pattern": "AA-0000",
       "format_explanation": "Two letters followed by a hyphen and one to four numbers, where the letters represent a region or a designation code and the numbers are the unique serial number.",
       "alphabet": "Latin, with restrictions on certain letters such as O and Q to avoid confusion with numbers.",
       "forbidden_combinations": null,
@@ -526,7 +526,7 @@
       "extracted_at": "2026-02-15T22:01:17.791507+00:00"
     },
     "MD": {
-      "format_pattern": "LLL NNN",
+      "format_pattern": "AAA 000",
       "format_explanation": "Three letters representing the series followed by three numbers as the serial number.",
       "alphabet": "Latin alphabet. The letters C and K are used for the region code Chișinău.",
       "forbidden_combinations": null,
@@ -544,17 +544,17 @@
       "extracted_at": "2026-02-15T22:01:22.599874+00:00"
     },
     "ME": {
-      "format_pattern": "MNE-LL-NNN",
+      "format_pattern": "MNE-AA-000",
       "format_explanation": "MNE signifies the country code for Montenegro, LL refers to the two-letter code of the municipality, and NNN indicates the registration code which consists of two letters followed by three numbers.",
       "alphabet": "Latin alphabet; letters I and O are omitted from serial combinations to avoid confusion with the numbers 1 and 0. Other omitted letters include W, X, Y, Q, and special characters (Č,Ć,Š,Đ,Ž).",
-      "forbidden_combinations": "null",
+      "forbidden_combinations": null,
       "vanity_plates": "Yes, customized plates with any letter-number combination are available.",
       "year_introduced": "2008",
       "dimensions": "520 × 110 mm",
       "colors_background": "White",
       "colors_lettering": "Black",
       "colors_strip": "Blue",
-      "typeface": "null",
+      "typeface": null,
       "strip_contents": "Montenegro's international automobile code (MNE)",
       "country_name": "Montenegro",
       "iso": "ME",
@@ -562,7 +562,7 @@
       "extracted_at": "2026-02-15T22:01:30.485082+00:00"
     },
     "MK": {
-      "format_pattern": "LL NNNN LL",
+      "format_pattern": "AA 0000 AA",
       "format_explanation": "The first two letters are the region code, followed by a 4-digit serial number, and a 2-letter alpha code.",
       "alphabet": "Latin alphabet with Cyrillic equivalents; the letters Q, W, X, and Y are not used.",
       "forbidden_combinations": null,
@@ -580,7 +580,7 @@
       "extracted_at": "2026-02-15T22:01:36.425728+00:00"
     },
     "NL": {
-      "format_pattern": "A-001-AA",
+      "format_pattern": "A-000-AA",
       "format_explanation": "The pattern consists of letters and digits, where A represents letters and 0 represents numbers. The series may vary but typically follows a structure of letters and numbers in two parts.",
       "alphabet": "Latin alphabet, with notable restrictions on vowels (A, E, I, O, U) to avoid profane language, and C and Q omitted to prevent confusion with zero. Letters M and W are not used due to their width.",
       "forbidden_combinations": [
@@ -615,7 +615,7 @@
       "extracted_at": "2026-02-15T22:01:59.363803+00:00"
     },
     "NO": {
-      "format_pattern": "LL NNNNN",
+      "format_pattern": "AA 00000",
       "format_explanation": "Two letters represent the geographic registration area followed by a serial number of four or five digits.",
       "alphabet": "Latin; the letters G, I, O, and Q are not used due to similarity with other characters.",
       "forbidden_combinations": "The combinations 'NS' and 'SS' are prohibited due to associations with WWII; additionally, the Norwegian letters Æ, Ø, and Å are not used.",
@@ -625,7 +625,7 @@
       "colors_background": "White",
       "colors_lettering": "Black",
       "colors_strip": "Blue nationality stripe with the Norwegian flag",
-      "typeface": "null",
+      "typeface": null,
       "strip_contents": "National flag and international vehicle registration code 'N'",
       "country_name": "Norway",
       "iso": "NO",
@@ -633,7 +633,7 @@
       "extracted_at": "2026-02-15T22:02:04.785437+00:00"
     },
     "PL": {
-      "format_pattern": "XY 12345",
+      "format_pattern": "AA 00000",
       "format_explanation": "XY represents the county code with the first letter indicating the voivodeship, followed by a series of numbers and letters that specify the vehicle's registration uniquely.",
       "alphabet": "Latin alphabet, excluding the letter Q. Some letters like B, D, I, O, and Z are restricted in certain serial areas due to potential confusion with digits.",
       "forbidden_combinations": "B, D, I, O, and Z cannot be used in the series area to avoid confusion with digits. Custom plates may include these letters.",
@@ -651,7 +651,7 @@
       "extracted_at": "2026-02-15T22:02:14.107560+00:00"
     },
     "PT": {
-      "format_pattern": "AA-NN-AA",
+      "format_pattern": "AA-00-AA",
       "format_explanation": "Two letters, followed by two numbers, followed by two letters. The letters do not correspond to any geographical location.",
       "alphabet": "Latin alphabet; letters W, Y, and K are used.",
       "forbidden_combinations": null,
@@ -669,7 +669,7 @@
       "extracted_at": "2026-02-15T22:02:18.922543+00:00"
     },
     "RO": {
-      "format_pattern": "CC 12 ABC",
+      "format_pattern": "AA 00 AAA",
       "format_explanation": "CC is a two-letter county code, 12 is a two or three-digit group, and ABC is a three-letter group.",
       "alphabet": "Latin, with the letter Q not used and three-letter codes restricted from starting with I or O.",
       "forbidden_combinations": "Q is not used to avoid confusion with O. Codes may not start with I or O; combinations like III or OOO are banned. Combinations forming obscene words are denied licensing but may still be in use if issued before the ban.",
@@ -687,7 +687,7 @@
       "extracted_at": "2026-02-15T22:02:37.045769+00:00"
     },
     "RS": {
-      "format_pattern": "LL NNN-NN",
+      "format_pattern": "AA 000-AA",
       "format_explanation": "Two-letter regional code followed by three or four-digit numeric code, and then a two-letter alpha code.",
       "alphabet": "Latin alphabet (Serbian Latin) with the addition of letter X; letters Ć, Č, Š, Ž, Đ, Y, and W are restricted.",
       "forbidden_combinations": "Plates with the special 'hooked' letters of the Serbian Latin alphabet (Ć, Č, Š, Ž, Đ) and letters Y and W are no longer issued.",
@@ -705,7 +705,7 @@
       "extracted_at": "2026-02-15T22:02:47.798179+00:00"
     },
     "SE": {
-      "format_pattern": "LLL NNNN or LLL NNÄ",
+      "format_pattern": "AAA 0000 or AAA 00A",
       "format_explanation": "Three letters followed by a space and either two digits plus a digit or a letter. The last character indicates the month for vehicle tax payment.",
       "alphabet": "Latin; letters I, Q, V, Å, Ä, Ö, and O are excluded in specific contexts.",
       "forbidden_combinations": "Over 90 combinations deemed offensive, political, or otherwise unsuitable. Examples include APA, ARG, DUM, FAN, GAY, HOT, SEX, and others.",
@@ -723,7 +723,7 @@
       "extracted_at": "2026-02-15T22:02:59.676361+00:00"
     },
     "SI": {
-      "format_pattern": "LL-NNNN-LL",
+      "format_pattern": "AA-0000-AA",
       "format_explanation": "The first two letters denote the region where the car was registered, followed by a four-digit serial number, and ending with two letters that may represent administrative or regional identifiers.",
       "alphabet": "Latin; letters such as C, D, I, O, Q, and Z are excluded.",
       "forbidden_combinations": null,
@@ -741,7 +741,7 @@
       "extracted_at": "2026-02-15T22:03:04.898292+00:00"
     },
     "SK": {
-      "format_pattern": "LL-NNNLL",
+      "format_pattern": "AA-000AA",
       "format_explanation": "The first two letters represent arbitrary letters of the alphabet. The three digits represent a serial number, and the last two letters are additional letters assigned alphabetically.",
       "alphabet": "Latin, excluding letters Q and W as well as Slovak letters such as Š.",
       "forbidden_combinations": null,
@@ -759,7 +759,7 @@
       "extracted_at": "2026-02-15T22:03:10.021213+00:00"
     },
     "TR": {
-      "format_pattern": "99 XX 9999",
+      "format_pattern": "00 AA 0000",
       "format_explanation": "99 - two digits for province code, XX - one or two letters, 9999 - four digits",
       "alphabet": "Turkish alphabet (excluding Ç, Ş, İ, Ö, Ü, Ğ, and Latin letters Q, W, X)",
       "forbidden_combinations": null,
@@ -777,7 +777,7 @@
       "extracted_at": "2026-02-15T22:03:16.677555+00:00"
     },
     "UA": {
-      "format_pattern": "LL NNNN LL",
+      "format_pattern": "AA 0000 AA",
       "format_explanation": "LL represents a two-letter regional code, NNNN represents four digits of the serial number, and LL at the end is a two-letter suffix.",
       "alphabet": "Cyrillic with specific Latin resembling glyphs (А, В, Е, І, К, М, Н, О, Р, С, Т, Х).",
       "forbidden_combinations": "BP (can be read as Верховна Рада, Ukraine's parliament) and CC (can be read as SS, Schutzstaffel).",
@@ -795,7 +795,7 @@
       "extracted_at": "2026-02-15T22:03:23.126421+00:00"
     },
     "XK": {
-      "format_pattern": "01 234-AB",
+      "format_pattern": "00 000-AA",
       "format_explanation": "01 is the regional code, 234 is a three-digit number starting from 101, and AB are two serial letters.",
       "alphabet": "Latin alphabet with letters A to Q",
       "forbidden_combinations": null,
