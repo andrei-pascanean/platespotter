@@ -524,14 +524,14 @@
             font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
         }
 
-        .panel-forbidden-text {
-            font-size: 12px;
-            color: #ccc;
-            line-height: 1.5;
-            background: rgba(255,255,255,0.03);
-            border: 1px solid #2a2a2a;
-            border-radius: 4px;
-            padding: 8px 10px;
+        .panel-code {
+            font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+            font-size: 11px;
+            font-weight: 600;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid #333;
+            border-radius: 3px;
+            padding: 1px 5px;
         }
 
         body.light .panel-section {
@@ -556,10 +556,10 @@
             border-color: #ccc;
             color: #333;
         }
-        body.light .panel-forbidden-text {
+        body.light .panel-code {
+            background: rgba(0,0,0,0.04);
+            border-color: #ccc;
             color: #333;
-            background: rgba(0,0,0,0.02);
-            border-color: #ddd;
         }
 
         /* --- Mobile --- */
@@ -1149,6 +1149,14 @@
                 return v !== null && v !== undefined && v !== "null" && v !== "";
             }
 
+            function tagCodes(text) {
+                return text.replace(/\b(0{2,6}|9{3,6}|[A-Z]{1,3})\b|([ÄÖÜßÆØÅČĆŠĐŽ])/g, function(m, ascii, special) {
+                    const skip = ['EU','No','RAL','DIN','ISO','CHF','BGN','CZK','LVL','NOK','Since','March','They','The','These','Each','Some','Custom','Yes','Available','Not','Over','Latin','Cyrillic','Turkish'];
+                    if (ascii && skip.includes(ascii)) return m;
+                    return '<code class="panel-code">' + m + '</code>';
+                });
+            }
+
             function buildPanelHTML(code, name) {
                 const plateSrc = plateMap[code];
                 const pf = plateFormats ? plateFormats[code] : null;
@@ -1163,9 +1171,9 @@
                 // --- Format ---
                 html += `<div class="panel-section"><div class="panel-section-title">Format</div>`;
                 html += `<div class="panel-format-pattern">${pf.format_pattern}</div>`;
-                html += `<div class="panel-field"><div class="panel-field-value">${pf.format_explanation}</div></div>`;
+                html += `<div class="panel-field"><div class="panel-field-value">${tagCodes(pf.format_explanation)}</div></div>`;
                 if (isVal(pf.alphabet)) {
-                    html += `<div class="panel-field"><div class="panel-field-label">Alphabet</div><div class="panel-field-value">${pf.alphabet}</div></div>`;
+                    html += `<div class="panel-field"><div class="panel-field-label">Alphabet</div><div class="panel-field-value">${tagCodes(pf.alphabet)}</div></div>`;
                 }
                 html += `</div>`;
 
@@ -1186,20 +1194,19 @@
                 html += `</div>`;
 
                 // --- Forbidden Combinations ---
+                html += `<div class="panel-section"><div class="panel-section-title">Forbidden Combinations</div>`;
                 if (isVal(pf.forbidden_combinations)) {
-                    html += `<div class="panel-section"><div class="panel-section-title">Forbidden Combinations</div>`;
-                    if (Array.isArray(pf.forbidden_combinations)) {
-                        html += `<ul class="panel-forbidden-list">` + pf.forbidden_combinations.map(c => `<li>${c}</li>`).join("") + `</ul>`;
-                    } else {
-                        html += `<div class="panel-forbidden-text">${pf.forbidden_combinations}</div>`;
-                    }
-                    html += `</div>`;
+                    const fcText = Array.isArray(pf.forbidden_combinations) ? pf.forbidden_combinations.join(", ") : pf.forbidden_combinations;
+                    html += `<div class="panel-field-value">${tagCodes(fcText)}</div>`;
+                } else {
+                    html += `<div class="panel-field-value">None</div>`;
                 }
+                html += `</div>`;
 
                 // --- Vanity Plates ---
                 if (isVal(pf.vanity_plates)) {
                     html += `<div class="panel-section"><div class="panel-section-title">Vanity Plates</div>`;
-                    html += `<div class="panel-field"><div class="panel-field-value">${pf.vanity_plates}</div></div>`;
+                    html += `<div class="panel-field"><div class="panel-field-value">${tagCodes(pf.vanity_plates)}</div></div>`;
                     html += `</div>`;
                 }
 

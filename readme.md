@@ -1,5 +1,6 @@
 ## Bugs
 - [ ] Montenegro format display with MNE at the start
+- [ ] Full content DD required to ensure the information is accurate
 
 ## Features
 - [x] Add colorpicker for the highlight color
