@@ -40,7 +40,7 @@
       "extracted_at": "2026-02-15T21:57:29.771895+00:00"
     },
     "AM": {
-      "format_pattern": "00 AA 000, 000 AA 00",
+      "format_pattern": "00 AA 000\n000 AA 00",
       "format_explanation": "The first part (00) represents numbers potentially indicating a regional code, followed by two letters (AA) that are smaller in size. The final part consists of another set of numbers (000). The reverse format (000 AA 00) is used for government vehicles.",
       "alphabet": "Latin (A-Z), with specific letters gradually introduced over time. Initially, a few Armenian letters were also used.",
       "forbidden_combinations": null,
@@ -85,9 +85,9 @@
       "dimensions": "520 × 110 mm",
       "colors_background": "White",
       "colors_lettering": "Black",
-      "colors_strip": "None",
+      "colors_strip": "White strip with national flag",
       "typeface": "Unknown",
-      "strip_contents": "None",
+      "strip_contents": "National flag and region code",
       "country_name": "Belarus",
       "iso": "BY",
       "wikipedia_article": "Vehicle_registration_plates_of_Belarus",
@@ -113,7 +113,7 @@
     },
     "BA": {
       "format_pattern": "A00-A-000",
-      "format_explanation": "X represents a letter, 00 represents two numbers, and 000 represents three numbers.",
+      "format_explanation": "A is a letter, 00 is a two-digit number, A is a single letter, and 000 is a three-digit number. The format does not indicate geographic origin.",
       "alphabet": "Latin and Cyrillic script letters: A, E, O, J, K, M, T.",
       "forbidden_combinations": null,
       "vanity_plates": "Unknown",
@@ -184,8 +184,8 @@
       "extracted_at": "2026-02-15T21:58:28.719808+00:00"
     },
     "CZ": {
-      "format_pattern": "0A0 0000",
-      "format_explanation": "The first letter indicates the region code, followed by a number series.",
+      "format_pattern": "0AA 0000",
+      "format_explanation": "The first digit and following two letters indicate the region code, followed by a four-digit serial number.",
       "alphabet": "Latin; the letters G, CH, O, Q, and W may not be used",
       "forbidden_combinations": "The letters G, CH, O, Q, and W may not be used to avoid confusion, and the license plate cannot contain any abusive or offensive words.",
       "vanity_plates": "Custom ('personalized') plates are available for a fee of 5,000 CZK per plate, requiring at least one number and formatted as XXX-XXXXX.",
@@ -382,8 +382,8 @@
       "extracted_at": "2026-02-15T22:00:04.263535+00:00"
     },
     "HU": {
-      "format_pattern": "AAAA 000",
-      "format_explanation": "The first four characters are letters, where the first two must be either both vowels or both consonants, followed by a Hungarian coat of arms, and followed by three numbers.",
+      "format_pattern": "AA ∇ AA-000",
+      "format_explanation": "AA is a two-letter prefix, ∇ represents the Hungarian coat of arms, AA is a two-letter series, and 000 is a three-digit serial number.",
       "alphabet": "Latin; the letters I, O, and Q are restricted in certain positions.",
       "forbidden_combinations": "I and O cannot be the last letter; Q cannot be used at all; these restrictions prevent confusion with numbers.",
       "vanity_plates": "Personalized plates are available in formats of three letters and three numbers (~€350) or four letters and two numbers or five letters and one number (~€1300); offensive or misleading texts are not allowed.",
@@ -427,9 +427,9 @@
       "dimensions": "520 × 110 mm",
       "colors_background": "Reflective white background",
       "colors_lettering": "Blue characters",
-      "colors_strip": "None",
+      "colors_strip": "Integrated into plate design (no separate strip)",
       "typeface": "Helvetica Neue",
-      "strip_contents": "None",
+      "strip_contents": "Icelandic flag and country code IS",
       "country_name": "Iceland",
       "iso": "IS",
       "wikipedia_article": "Vehicle_registration_plates_of_Iceland",
@@ -528,7 +528,7 @@
     "MD": {
       "format_pattern": "AAA 000",
       "format_explanation": "Three letters representing the series followed by three numbers as the serial number.",
-      "alphabet": "Latin alphabet. The letters C and K are used for the region code Chișinău.",
+      "alphabet": "Latin alphabet",
       "forbidden_combinations": null,
       "vanity_plates": "Unknown",
       "year_introduced": "2015",
@@ -544,8 +544,8 @@
       "extracted_at": "2026-02-15T22:01:22.599874+00:00"
     },
     "ME": {
-      "format_pattern": "MNE-AA-000",
-      "format_explanation": "MNE signifies the country code for Montenegro, AA refers to the two-letter code of the municipality, and 000 indicates the registration code which consists of two letters followed by three numbers.",
+      "format_pattern": "AA ∇ AA 000",
+      "format_explanation": "AA is the municipality code, ∇ represents the coat of arms, AA is a two-letter series, and 000 is a three-digit serial number.",
       "alphabet": "Latin alphabet; letters I and O are omitted from serial combinations to avoid confusion with the numbers 1 and 0. Other omitted letters include W, X, Y, Q, and special characters (Č,Ć,Š,Đ,Ž).",
       "forbidden_combinations": null,
       "vanity_plates": "Yes, customized plates with any letter-number combination are available.",
@@ -653,7 +653,7 @@
     "PT": {
       "format_pattern": "AA-00-AA",
       "format_explanation": "Two letters, followed by two numbers, followed by two letters. The letters do not correspond to any geographical location.",
-      "alphabet": "Latin alphabet; includes W, Y, and K, which are not part of the traditional Portuguese alphabet.",
+      "alphabet": "Latin alphabet (A-Z)",
       "forbidden_combinations": null,
       "vanity_plates": "Not available",
       "year_introduced": "2020",
@@ -705,8 +705,8 @@
       "extracted_at": "2026-02-15T22:02:47.798179+00:00"
     },
     "SE": {
-      "format_pattern": "AAA 0000 or AAA 00A",
-      "format_explanation": "Three letters followed by a space and either two digits plus a digit or a letter. The last character indicates the month for vehicle tax payment.",
+      "format_pattern": "AAA 000\nAAA 00A",
+      "format_explanation": "Three letters followed by three characters: either three digits (AAA 000) or two digits and a letter (AAA 00A). The last character indicates the month for vehicle tax payment.",
       "alphabet": "Latin; letters I, Q, V, Å, Ä, Ö, and O are excluded in specific contexts.",
       "forbidden_combinations": "Over 90 combinations deemed offensive, political, or otherwise unsuitable. Examples include APA, ARG, DUM, FAN, GAY, HOT, SEX, and others.",
       "vanity_plates": "Personalized plates allowed with rules; cost is 6900 kr (about 570 €), valid for ten years.",
@@ -741,8 +741,8 @@
       "extracted_at": "2026-02-15T22:03:04.898292+00:00"
     },
     "SK": {
-      "format_pattern": "AA-000AA",
-      "format_explanation": "The first two letters represent arbitrary letters of the alphabet. The three digits represent a serial number, and the last two letters are additional letters assigned alphabetically.",
+      "format_pattern": "AA ∇ 000 AA",
+      "format_explanation": "AA is a two-letter district code, ∇ represents the Slovak coat of arms, 000 is a three-digit serial number, and AA is a two-letter series code.",
       "alphabet": "Latin, excluding letters Q and W as well as Slovak letters such as Š.",
       "forbidden_combinations": null,
       "vanity_plates": "Personalized plates are available for an extra fee, but must include the random letters and five other characters, with restrictions on political, religious, or offensive messages.",

@@ -1,0 +1,7 @@
+- UK license plates show the data of first registration
+- MD plates for the president is just the flag of MD
+- Armenian plates slowly introduce letters from the Armenian alphabet
+- Sweden's last digit indicates the month for vehicle tax payment
+- Some countries that have both latin and cyrillic alphabets, like Bulgaria, will only use letters that are in commond between the 2 alphabets
+- Kosovo's 3-digit number starts at 101
+- Bosnia's license plates use only 7 letters

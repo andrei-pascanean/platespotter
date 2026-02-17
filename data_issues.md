@@ -1,0 +1,21 @@
+## Data Issues:
+- Side strip and strip contents seems to be too much, let's stick to just using 'strip contents', which seems to be more descriptive
+- Norway vanity plates description partially tags the price of NOK 9,000.
+- Iceland is mentioned as not having a side strip, which is not true as it does have a flag and country code, just no separate background color
+- Swedish format explanation includes as example three letters followed by four digits, while the limit is three digits
+- Belarus description indicates it has no side strip while it does - similar situation to iceland
+- Ukraine has the same issue as norway with it's vanity plates price of ₴20,000.
+- moldova states: The letters C and K are used for the region code Chișinău. but this is not true anymore with the lates license plates produced
+- same issue with tagging happening on bulgaria's panel with BGN 7,000
+- for armenia, the examples for format are not formatted nicely due to the line cut-off and comma, can you please have the 2 examples underneath one another
+- cyprus plate format description does not tag 001
+- greek plate format description does not tag 1000
+- Bulgaria has the same issue as ukraine in the vanity plates section with the price of  BGN 7,000
+- montenegro's example format and description explains the first letters as being MNE, meanwhile the license plate image does not show this
+- Bosnia's license plate format description has to be re-written to match the example format
+- Croatia has the same issue as Ukraine, this time with 2,000 kuna 
+- Hungarian coat of arms should also be reflected on the format example, similar to Austria
+- Slovakia's format example should also have a coat of arms
+- Czechia's format example does not match the image of the license plate, which shows a number followed by 2 letters
+- Same issue as Ukraine's is present for austria's vanity plates section with  €21.00 
+- Portugal's plat description states that w y and k are not part of the portuguese alphabet, which is not true

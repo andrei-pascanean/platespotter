@@ -6,6 +6,7 @@
 - [ ] Country should stay highlighted while side panel is open
 - [ ] difficult to click on microstates
 - [ ] some countries front and back are of different color.
+- [ ] add an identified to see if a country is a signatory to the vienna convention on road traffic
 
 ## Features
 - [x] Add colorpicker for the highlight color
@@ -18,3 +19,4 @@
 - [x] Add basic info to side panel:
 - [ ] Add button to learn more that links to wiki page on side panel
 - [ ] create your own license plate
+- [ ] get a better map that includes more countries and territories

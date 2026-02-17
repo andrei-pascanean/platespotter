@@ -505,6 +505,7 @@
             text-align: center;
             letter-spacing: 0.15em;
             margin-bottom: 8px;
+            white-space: pre-line;
         }
         .panel-forbidden-list {
             list-style: none;
@@ -1150,9 +1151,13 @@
             }
 
             function tagCodes(text) {
-                return text.replace(/\b(0{2,6}|9{3,6}|[A-Z]{1,3})\b|([ÄÖÜßÆØÅČĆŠĐŽ])/g, function(m, ascii, special) {
+                return text.replace(/(?<![,.])\b(\d{3,4})\b|(?:\b([A-Z]{1,3})\b)|([ÄÖÜßÆØÅČĆŠĐŽ])/g, function(m, digits, letters, special, offset) {
                     const skip = ['EU','No','RAL','DIN','ISO','CHF','BGN','CZK','LVL','NOK','Since','March','They','The','These','Each','Some','Custom','Yes','Available','Not','Over','Latin','Cyrillic','Turkish'];
-                    if (ascii && skip.includes(ascii)) return m;
+                    if (letters && skip.includes(letters)) return m;
+                    if (digits) {
+                        const before = text.slice(Math.max(0, offset - 3), offset);
+                        if (/[€₴£$~]|kr/.test(before)) return m;
+                    }
                     return '<code class="panel-code">' + m + '</code>';
                 });
             }
@@ -1182,11 +1187,8 @@
                 html += `<div class="panel-field"><div class="panel-field-label">Dimensions</div><div class="panel-field-value">${pf.dimensions}</div></div>`;
                 html += `<div class="panel-field"><div class="panel-field-label">Background</div><div class="panel-field-value">${pf.colors_background}</div></div>`;
                 html += `<div class="panel-field"><div class="panel-field-label">Lettering</div><div class="panel-field-value">${pf.colors_lettering}</div></div>`;
-                if (isVal(pf.colors_strip)) {
-                    html += `<div class="panel-field"><div class="panel-field-label">Side strip</div><div class="panel-field-value">${pf.colors_strip}</div></div>`;
-                }
                 if (isVal(pf.strip_contents)) {
-                    html += `<div class="panel-field"><div class="panel-field-label">Strip contents</div><div class="panel-field-value">${pf.strip_contents}</div></div>`;
+                    html += `<div class="panel-field"><div class="panel-field-label">Side strip</div><div class="panel-field-value">${pf.strip_contents}</div></div>`;
                 }
                 if (isVal(pf.typeface)) {
                     html += `<div class="panel-field"><div class="panel-field-label">Typeface</div><div class="panel-field-value">${pf.typeface}</div></div>`;
