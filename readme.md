@@ -24,3 +24,4 @@
 ## Ideas
 - preview license plate on a tesla
 - select the side strip to change the license plate design (country)
+- 'remix this plate' option on the map
