@@ -1,9 +1,9 @@
 ## Bugs
-- [ ] Make side pannel bigger with larger font size
+- [x] Make side pannel bigger with larger font size
 - [ ] Country should stay highlighted while side panel is open
 - [ ] difficult to click on microstates
 - [ ] some countries front and back are of different color.
-- [ ] add an identified to see if a country is a signatory to the vienna convention on road traffic
+- [ ] add an identifier to see if a country is a signatory to the vienna convention on road traffic
 
 ## Features
 - [x] Add colorpicker for the highlight color
