@@ -59,6 +59,10 @@
         body.theme-transition .nav-tabs-indicator {
             transition: transform 0.25s ease, width 0.25s ease, background-color 0.3s ease !important;
         }
+        body.theme-transition .nav-tab,
+        body.theme-transition .nav-theme-toggle {
+            transition: color 0.3s ease !important;
+        }
 
         body {
             font-family: 'JetBrains Mono', 'SF Mono', Monaco, Inconsolata, 'Fira Code', monospace;
@@ -1360,7 +1364,14 @@
                 else if (current === "black" && !light) setAccent("white");
                 setTimeout(() => document.body.classList.remove("theme-transition"), 350);
             });
-            setTheme(localStorage.getItem("theme") === "light");
+            const savedTheme = localStorage.getItem("theme");
+            if (savedTheme) {
+                setTheme(savedTheme === "light");
+            } else if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+                setTheme(false);
+            } else {
+                setTheme(true);
+            }
 
             // --- Accent Color Drawer ---
             const accentColors = { green: "#4ac685", blue: "#44aaff", red: "#ff5566", orange: "#ffaa44", white: "#ffffff", black: "#000000" };
