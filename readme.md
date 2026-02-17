@@ -16,5 +16,6 @@
 - [x] Add basic info to side panel:
 - [x] Add button to learn more that links to wiki page on side panel
 - [ ] create your own license plate
+- [ ] auto-check if the created plate is available & link to gov site
 - [ ] get a better map that includes more countries and territories
 - [ ] show the map as a live sattelite image with cars driving on highways at night when zooming in

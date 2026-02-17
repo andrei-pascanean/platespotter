@@ -87,6 +87,47 @@
             text-transform: uppercase;
         }
 
+        .nav-tabs {
+            display: flex;
+            gap: 4px;
+            margin-left: auto;
+        }
+
+        .nav-tab {
+            font-size: 0.7em;
+            font-weight: 600;
+            color: #777;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            text-decoration: none;
+            padding: 6px 14px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: color 0.15s ease, background 0.15s ease;
+        }
+
+        .nav-tab:hover {
+            color: #ccc;
+            background: rgba(255,255,255,0.06);
+        }
+
+        .nav-tab.active {
+            color: #e8e8e8;
+            background: rgba(255,255,255,0.1);
+        }
+
+        body.light .nav-tab {
+            color: #888;
+        }
+        body.light .nav-tab:hover {
+            color: #333;
+            background: rgba(0,0,0,0.05);
+        }
+        body.light .nav-tab.active {
+            color: #1a1a1a;
+            background: rgba(0,0,0,0.08);
+        }
+
         .nav-status {
             font-size: 0.65em;
             color: #888888;
@@ -652,6 +693,10 @@
 <body>
     <nav>
         <a href="/" class="nav-logo">PlateLab</a>
+        <div class="nav-tabs">
+            <a class="nav-tab active" data-tab="map">Map</a>
+            <a class="nav-tab" data-tab="workbench">Workbench</a>
+        </div>
     </nav>
 
     <main>
