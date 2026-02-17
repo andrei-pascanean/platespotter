@@ -160,7 +160,8 @@
         }
 
         .country:hover,
-        .country.active {
+        .country.active,
+        .country.panel-active {
             fill: var(--accent);
             stroke: var(--accent-stroke);
         }
@@ -296,7 +297,8 @@
         body.light main { background: #ffffff; }
         body.light .country { fill: var(--land-light); stroke: var(--land-light-stroke); }
         body.light .country:hover,
-        body.light .country.active { fill: var(--accent-light); stroke: var(--accent-light-dark); }
+        body.light .country.active,
+        body.light .country.panel-active { fill: var(--accent-light); stroke: var(--accent-light-dark); }
         body.light footer {
             background: #ffffff;
             color: #999;
@@ -364,7 +366,7 @@
             left: 12px;
             top: 12px;
             bottom: 12px;
-            width: 340px;
+            width: min(480px, 45% - 24px);
             background: rgba(10, 10, 10, 0.95);
             border: 2px solid var(--accent);
             border-radius: 8px;
@@ -405,12 +407,12 @@
         }
 
         .panel-content {
-            padding: 24px;
+            padding: 28px;
         }
 
         .panel-country-name {
             font-weight: 700;
-            font-size: 22px;
+            font-size: 24px;
             color: var(--accent);
             text-transform: uppercase;
             letter-spacing: 0.08em;
@@ -429,7 +431,7 @@
 
         .panel-no-plate {
             color: #666;
-            font-size: 11px;
+            font-size: 12px;
             text-transform: uppercase;
             letter-spacing: 0.05em;
         }
@@ -465,7 +467,7 @@
             margin-top: 16px;
         }
         .panel-section-title {
-            font-size: 13px;
+            font-size: 14px;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.12em;
@@ -481,7 +483,7 @@
             margin-bottom: 0;
         }
         .panel-field-label {
-            font-size: 9px;
+            font-size: 10px;
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.08em;
@@ -489,13 +491,13 @@
             margin-bottom: 3px;
         }
         .panel-field-value {
-            font-size: 12px;
+            font-size: 13px;
             color: #ccc;
-            line-height: 1.45;
+            line-height: 1.5;
         }
         .panel-format-pattern {
             font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
-            font-size: 18px;
+            font-size: 20px;
             font-weight: 700;
             color: #fff;
             background: #1a1a1a;
@@ -516,7 +518,7 @@
             gap: 4px;
         }
         .panel-forbidden-list li {
-            font-size: 10px;
+            font-size: 11px;
             background: rgba(255,255,255,0.06);
             border: 1px solid #333;
             border-radius: 3px;
@@ -527,7 +529,7 @@
 
         .panel-code {
             font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
-            font-size: 11px;
+            font-size: 12px;
             font-weight: 600;
             background: rgba(255,255,255,0.06);
             border: 1px solid #333;
@@ -1220,6 +1222,55 @@
                 return html;
             }
 
+            let animationId = null;
+
+            function centerOnCountry(code) {
+                const el = document.getElementById(code);
+                if (!el) return;
+                const bbox = el.getBBox();
+                const cx = bbox.x + bbox.width / 2;
+                const cy = bbox.y + bbox.height / 2;
+
+                // Target zoom: zoom in if mostly zoomed out
+                const zoomLevel = Math.min(vbW / SVG_W, 1);
+                let targetW = vbW, targetH = vbH;
+                if (zoomLevel > 0.6) {
+                    targetW = SVG_W * 0.5;
+                    targetH = SVG_H * 0.5;
+                }
+
+                // Calculate panel width as fraction of screen
+                const panelEl = document.querySelector(".country-panel");
+                const mapRect = svg.getBoundingClientRect();
+                const panelWidth = panelEl.offsetWidth + 24;
+                const panelFraction = panelWidth / mapRect.width;
+
+                // Offset: center the country in the visible area (right of panel)
+                const visibleCenterFraction = panelFraction + (1 - panelFraction) / 2;
+                let targetX = cx - targetW * visibleCenterFraction;
+                let targetY = cy - targetH / 2;
+
+                // Clamp targets
+                targetW = Math.min(targetW, SVG_W);
+                targetH = Math.min(targetH, SVG_H);
+                const padRight = targetW < SVG_W ? targetW * 0.4 : 0;
+                if (targetW >= SVG_W) targetX = 0;
+                else targetX = Math.max(0, Math.min(targetX, SVG_W - targetW + padRight));
+                if (targetH >= SVG_H) targetY = 0;
+                else targetY = Math.max(0, Math.min(targetY, SVG_H - targetH));
+
+                animateViewBox(targetX, targetY, targetW, targetH);
+            }
+
+            function highlightCountry(code) {
+                const prev = document.querySelector(".country.panel-active");
+                if (prev) prev.classList.remove("panel-active");
+                if (code) {
+                    const el = document.getElementById(code);
+                    if (el) el.classList.add("panel-active");
+                }
+            }
+
             function openPanel(code, name) {
                 if (panelCountryCode === code && panel.classList.contains("open")) {
                     closePanel();
@@ -1232,19 +1283,51 @@
                     setTimeout(() => {
                         panelContent.innerHTML = buildPanelHTML(code, name);
                         panelCountryCode = code;
+                        highlightCountry(code);
                         panel.classList.add("open");
+                        centerOnCountry(code);
                         setTimeout(() => { panel.style.transition = ""; }, 150);
                     }, 150);
                     return;
                 }
                 panelContent.innerHTML = buildPanelHTML(code, name);
                 panelCountryCode = code;
+                highlightCountry(code);
                 panel.classList.add("open");
+                centerOnCountry(code);
+            }
+
+            function animateViewBox(targetX, targetY, targetW, targetH) {
+                if (animationId) cancelAnimationFrame(animationId);
+                const startX = vbX, startY = vbY, startW = vbW, startH = vbH;
+                const duration = 400;
+                const startTime = performance.now();
+
+                function easeOut(t) { return 1 - Math.pow(1 - t, 3); }
+
+                function step(now) {
+                    const t = Math.min((now - startTime) / duration, 1);
+                    const e = easeOut(t);
+                    vbX = startX + (targetX - startX) * e;
+                    vbY = startY + (targetY - startY) * e;
+                    vbW = startW + (targetW - startW) * e;
+                    vbH = startH + (targetH - startH) * e;
+                    applyViewBox();
+                    if (t < 1) {
+                        animationId = requestAnimationFrame(step);
+                    } else {
+                        animationId = null;
+                    }
+                }
+
+                animationId = requestAnimationFrame(step);
             }
 
             function closePanel() {
                 panel.classList.remove("open");
+                highlightCountry(null);
                 panelCountryCode = null;
+                animateViewBox(0, 0, SVG_W, SVG_H);
             }
 
             document.getElementById("panel-close").addEventListener("click", closePanel);

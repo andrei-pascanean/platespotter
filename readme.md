@@ -1,6 +1,6 @@
 ## Bugs
 - [x] Make side pannel bigger with larger font size
-- [ ] Country should stay highlighted while side panel is open
+- [x] Country should stay highlighted while side panel is open
 - [ ] difficult to click on microstates
 - [ ] some countries front and back are of different color.
 - [ ] add an identifier to see if a country is a signatory to the vienna convention on road traffic
@@ -17,3 +17,4 @@
 - [ ] Add button to learn more that links to wiki page on side panel
 - [ ] create your own license plate
 - [ ] get a better map that includes more countries and territories
+- [ ] show the map as a live sattelite image with cars driving on highways at night when zooming in
