@@ -20,7 +20,6 @@
 - [ ] get a better map that includes more countries and territories
 - [ ] show the map as a live sattelite image with cars driving on highways at night when zooming in
 - [x] make dark/light toggle smoother
-- [ ] make transition between pages even smoother
 
 ## Ideas
 - preview license plate on a tesla
